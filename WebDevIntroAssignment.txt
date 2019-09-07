@@ -1,0 +1,11 @@
+Assignment 1:
+    My name is Kevin Kim and I am a senior on my last semester as an undergraduate. 
+        I have a major in Biology and a minor in Computer Science. 
+        I have taken Computer Science 1 and 2 courses in SUNY New Paltz. 
+        I have not created any complete projects in Java, but I have made various small programs on my own time in both Java and Unity, such as calculators and some minor game programs. 
+        I am currently in the process of creating my own website and have intermediate knowledge in Javascript. 
+
+	I will most likely use what I will learn in this course to improve my own website and gain an insight into how more sophisticated sites like Facebook work and operate.
+        I can also see myself using the things I will learn here to create more sophisticated web projects for my resume and potentially future use. 
+
+    You can see a picture of my face in Face.jpg
