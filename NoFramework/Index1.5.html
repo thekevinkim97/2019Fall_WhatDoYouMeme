@@ -12,19 +12,16 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 id="1st">{{framework}}</h1>
-                <h1 id="2nd">Vue says Hello {{name?}}</h1>
+                <h1 id="1st">jQuery Demo</h1>
+                <h1 id="2nd">Second Header</h1>
             </div>
         </div>
         <div class="row">
             <div class="col" id="alert-col">
-
-                <input type="text" class="form-control" placeholder="What is your name?" v-model="name"/>
-
                 <div class="alert alert-primary" role="alert">
                     A simple primary alert—check it out!
                 </div>
-                <button type="button" class="btn btn-primary" @click="click">Primary</button>
+                <button type="button" class="btn btn-primary" >Primary</button>
                 <button type="button" class="btn btn-success" id="new" >Success</button>
 
             </div>
@@ -32,12 +29,9 @@
                 <div class="card" style="width: 18rem;">
                         <img src="https://media3.s-nbcnews.com/j/newscms/2019_35/2945101/190724-boris-johnson-queen-elizabeth-al-1045_968114a3317992bb3dca26dab6812e6f.focal-460x230.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Cart Total: {{total}} </h5>
-                            <p class="card-text" v-for = "x in items">
-                                <input class="col" v-model = "x.name" />
-                                <input class="col" v-model = "x.price" />
-                            </p>
-                            <a href="#" class="btn btn-primary" @click.prevent = "addItem">Add item</a>
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                 </div>
             </div>
@@ -53,9 +47,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         $(function(){
+
             $("#new").on('click', function(){
                 
                 console.log({
@@ -65,31 +59,10 @@
                 $(".alert").eq(0)
                 .clone().text("Some new text")
                 .appendTo("#alert-col");
-            })
-        })
-    </script>
 
-    <script>
-        var app = new Vue({ 
-            el: '#app',
-            data: {
-             framework: 'Vue!' , 
-             name: null ,
-             items: [] 
-            } ,
-             methods: {
-                click() {
-                    this.framework = 'Used to be jQuery, but now it\'s Vue'
-                } ,
-                addItem() {
-                    this.items.push({ name: '', price: 0.0});
-                }
-            },
-            computed: {
-                total() {
-                    return this.items.reduce( (prev, x) => prev + x.price, 0); //functional programming, 2 parameters
-                }
-            }
+            })
+
+
         })
     </script>
 </body>
