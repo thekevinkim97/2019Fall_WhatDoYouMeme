@@ -1,39 +1,27 @@
 const express = require('express');
-const app = express();
 const path = require('path');
-const port = 3000;
-//brings over users in local module
-const users = require('./models/Users');
 const userController = require('./controllers/Users');
 
-//if client sends request with 'get', with path '/'; do function 
+const app = express();
+const port = 3000;
+
 app
-    .use( function(req, res, next) {
+    .use( function( req, res, next) {
         // Logging
-        console.log({
-            //logging
-            params: req.params, body: req.body, url: req.url, query: req.query, headers: eq.headers
-        });
+        
+        console.log( { params: req.params, body: req.body, url: req.url, query: req.query, headers: req.headers });
         next();
     })
+    .use('/static', express.static( path.join( __dirname , '../NoFramework' ) ) )
 
-    .use('/static', express.static(path.join(__dirname, '../NoFramework')))
+    .get(   '/',
+            (req, res) => res.send('Hello New Paltz!')
+        )
+    .get(   '/heb',
+        function(req, res){
+            res.send({ msg: 'Shalom World!' })
+        }
+    )
+    .use('/users', userController );
 
-    .get('/', 
-        (req, res) => res.send('Hello World!!!'))
-
-    //Same thing as above!
-    .get('/heb', 
-        function(req,res) {
-            res.send({msg: 'shalom Wolrd!'})
-    })
-
-    .get('/users', (req, res) => res.send(users))
-
-    .use('/users', userController);
-
-//app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-//or: 
 app.listen(port, () => console.log(`Running on http://localhost:${port}`));
-
-//console.log("Running")`
