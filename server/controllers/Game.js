@@ -7,13 +7,13 @@ const game = {
     pictureCards: [],
     quoteCards: [],
 
-    dealer = 0
+    dealer: 0
 }
 
-app.post('/join', (req, res) => {
+app.post('/join', (req, res)=>{
     const userId = req.query.userId
-    game.users.push(users[userId])
+    game.users.push( users[userId] );
     res.send(users[userId])
-})
+} );
 
-module.export = app;
+module.exports = app;
