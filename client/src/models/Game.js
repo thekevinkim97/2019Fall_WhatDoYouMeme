@@ -6,6 +6,7 @@ const Game = {
     Captions_In_Play: [], //strings
     Picture_In_Play: "",
     Caption_Chosen: -1,
+    captions:[],
 }
 
 export const Game_Server = {
@@ -16,6 +17,7 @@ export const Game_Server = {
     Captions_In_Play: [], //strings
     Picture_In_Play: "",
     Caption_Chosen: -1,
+    captions:[],
 }
 export const Game_Client = {
     Players: [
@@ -29,10 +31,18 @@ export const Game_Client = {
     Captions_In_Play: [], //strings
     Picture_In_Play: "",
     Caption_Chosen: -1,
+    Hand: [
+        {captions: "I Have no Mouth, But I must Scream"},
+        {captions: "When you have to take a dump"},
+        {captions: "ROCKET PAAAAAANCH"},
+        {captions: "The Great War, 1945. Colorized."},
+    ],
 }
 export var My_Captions = [];
 class Player {
     name;
     points;
+}
+class Hand {
     captions;
 }
