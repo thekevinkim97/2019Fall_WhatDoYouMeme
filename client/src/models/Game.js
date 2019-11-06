@@ -1,48 +1,49 @@
-const Game = {
-    Players: [],
-    Picture_Deck: [],
-    Caption_Deck: [],
-    Dealer: -1,
-    Captions_In_Play: [], //strings
-    Picture_In_Play: "",
-    Caption_Chosen: -1,
-    captions:[],
-}
+import Caption_Deck from "./Captions";
 
 export const Game_Server = {
     Players: [],
-    Picture_Deck: [],
-    Caption_Deck: [],
+    Picture_Deck: [
+        "http://www.dailyhaha.com/_pics/prepared-to-slice-onions.jpg",
+        "http://www.dailyhaha.com/_pics/no-parking-here-guys.jpg",
+        "http://www.dailyhaha.com/_pics/best-parking-spot.jpg",
+        "http://www.dailyhaha.com/_pics/a-good-selling-point.jpg",
+    ],
+    Caption_Deck,
+    Top_Of_Picture_Deck: 0,
+    Top_Of_Caption_Deck: 0,    
+
     Dealer: -1,
-    Captions_In_Play: [], //strings
+    Captions_In_Play: [], // strings
     Picture_In_Play: "",
     Caption_Chosen: -1,
-    captions:[],
+    Get_Hand(amount = 7){
+        this.Top_Of_Caption_Deck += amount;
+        return this.Caption_Deck.slice(this.Top_Of_Caption_Deck - amount, this.Top_Of_Caption_Deck)
+    },
+    Get_Next_Picture(){
+        return this.Picture_Deck[this.Top_Of_Picture_Deck++];
+    }
 }
+
 export const Game_Client = {
     Players: [
-        {name: "Moshe", points: 0}, 
-        {name: "Bernie", points: 0}, 
-        {name: "Donald", points: 0}, 
-        {name: "Andrew", points: 0}, 
-
+        { name: "Moshe", points: 0 },
+        { name: "Bernie", points: 0 },
+        { name: "Donald", points: 0 },
+        { name: "Andrew", points: 0 },
     ],
-    Dealer: -1,
-    Captions_In_Play: [], //strings
+    Dealer: 0,
+    Captions_In_Play: [], // strings
     Picture_In_Play: "",
-    Caption_Chosen: -1,
-    Hand: [
-        {captions: "I Have no Mouth, But I must Scream"},
-        {captions: "When you have to take a dump"},
-        {captions: "ROCKET PAAAAAANCH"},
-        {captions: "The Great War, 1945. Colorized."},
-    ],
+    Caption_Chosen: -1
 }
-export var My_Captions = [];
-class Player {
+
+export var My_Captions = [
+
+];
+
+export class Player {
     name;
     points;
-}
-class Hand {
     captions;
 }
