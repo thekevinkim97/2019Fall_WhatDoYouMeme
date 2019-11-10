@@ -29,7 +29,7 @@ module.exports.Game = {
         this.Picture_In_Play = this.Picture_Deck[this.Top_Of_Picture_Deck++];
         this.Dealer++;
     },
-    Get_State() {
+    Get_State(){
         return {
             Players: this.Players,
             Dealer: this.Dealer,

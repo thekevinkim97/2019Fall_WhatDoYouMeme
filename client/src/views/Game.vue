@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { Game_Client, Game_Server, My_Captions } from "../models/Game";
+import { Game_Server } from "../models/Game";
 export default {
     data: ()=> ({
         game: {},

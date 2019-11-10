@@ -10,7 +10,7 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
-  });
+});
 
 app
     .get('/port', (req, res)=> res.send("Using port: " + port))
@@ -18,5 +18,5 @@ app
     .use('/static', express.static( path.join( __dirname , '../NoFramework' ) ) )
     .use('/users', userController )
     .use('/game', gameController );
-``
+
 app.listen(port, () => console.log(`Running on http://localhost:${port}`));
