@@ -2,7 +2,6 @@ const express = require('express');
 const { Game } = require("../models/Game");
 const app = express.Router();
 
-
 app.get('/', (req, res)=>{
     res.send(Game.Get_State());
 } );

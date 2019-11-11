@@ -4,7 +4,7 @@ export const Game_Server = {
     Get_Hand(amount = 7){
         return api('hand')
     },
-    Get_Next_Picture(){
+    Flip_Picture(){
         return api('picture/flip')
     },
     Get_State(){
@@ -12,7 +12,7 @@ export const Game_Server = {
     }
 }
 
-//to remind us the shape of the player
+//  Just to remind us the shape of a player
 export class Player {
     name;
     points;
