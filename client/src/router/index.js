@@ -1,29 +1,24 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import Game from '../views/Game.vue';
+import Game from '../views/Game';
+import Login from '../views/Login';
+import JoinGame from '../views/JoinGame';
 
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home,
-  },
+  { path: '/', name: 'home', component: Home },
+  { path: '/game', name: 'game', component: Game },
+  { path: '/login', name: 'login', component: Login },
+  { path: '/join', name: 'join-game', component: JoinGame },
   {
     path: '/about',
     name: 'about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    //imports ONLY when someone goes to that page, not part of original web bundle when site opened
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  },
-  {
-    path: '/game',
-    name: 'game',
-    component: Game,
   },
 ];
 
