@@ -9,9 +9,10 @@ export const Game_Server = {
         return api('picture/flip')
     },
     async Join(name){
-        const { player_id} = api('players', { name });
+        const { player_id } = await api('players', { name });
         User.User_Id = player_id;
-        this.$router.push( { name: 'game' } );
+        $router.push( { name: 'game'} );
+
     },
     Get_State(){
         return api('')

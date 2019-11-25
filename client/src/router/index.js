@@ -7,7 +7,6 @@ import Game from '../views/Game';
 import Login from '../views/Login';
 import JoinGame from '../views/JoinGame';
 
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -15,13 +14,11 @@ const routes = [
   { 
     path: '/game', name: 'game', component: Game,
     beforeEnter: (to, from, next) => {
-      //check login
-      if(User.User_Id != null) {
-        next( {name: "login" } )
-      } else {
+      if(User.User_Id == null){
+        next( { name: "login" } )
+      }else{
         next();
       }
-
     }
   },
   { path: '/login', name: 'login', component: Login },
