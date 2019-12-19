@@ -4,7 +4,7 @@ const userController = require('./controllers/Users');
 const gameController = require('./controllers/Game');
 
 const app = express();
-const port = process.env.PORT ||  3000;
+const port = process.env.PORT ||  3010;
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -25,9 +25,11 @@ app
     .use(express.json())
     .get('/port', (req, res)=> res.send("Using port: " + port))
     .get('/sql', (req, res)=> res.send(process.env.MYSQLCONNSTR_localdb))
-    .use('/static', express.static( path.join( __dirname , '../NoFramework' ) ) )
+    .use('/', express.static( path.join( __dirname , 'dist' ) ) )
     .use('/users', userController )
-    .use('/game', gameController );
+    .use('/gameApi', gameController )
+    .get('*', (req, res)=> res.sendFile(__dirname + '/dist/index.html' ))
+    ;
 
 app
     .use((err, req, res, next) => {

@@ -66,6 +66,7 @@
 <script>
 import { Game_Server } from "../models/Game";
 import toastr from "vanillatoasts/vanillatoasts";
+
 export default {
     data: ()=> ({
         game: {},

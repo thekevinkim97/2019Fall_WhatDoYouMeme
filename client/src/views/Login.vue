@@ -44,6 +44,7 @@
 
 <script>
 import { Game_Server } from "../models/Game";
+
 export default {
     data: ()=>({
         name: "",
@@ -58,10 +59,12 @@ export default {
                 });
         }
     }
+
 }
 </script>
 
 <style lang="scss">
+
     .fas.fa-exclamation-triangle {
         display: none;
     }
